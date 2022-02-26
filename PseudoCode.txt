@@ -1,0 +1,12 @@
+1-Get the Absolute Path  ;
+    A-Ensure that the Path is Absolute Or Stop  ;
+
+
+[Repeat Through the following : ]
+1-Check if there is Any Folder inside :
+    A-If Not Terminate ;
+    C-Make a List of All Folders in Level One [ie : inside main folder]
+        0--Delete any Empty Folders in the List ;
+        1-Cut all Files from those Level.1 Folders & Delete them
+    REPEAT C / Go to Level B ...etc .
+

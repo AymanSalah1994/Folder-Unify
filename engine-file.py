@@ -11,7 +11,7 @@ def containsFolder(pathToDirectory):
     :return bool
     """
     listOfFolders = os.listdir(pathToDirectory)
-    if listOfFolders:
+    if len(listOfFolders) > 0 :
         return True
     else:
         return False
@@ -42,15 +42,16 @@ def extractOrDelete(listOfLevelPaths , mainPath) :
             shutil.copytree(eachPath, mainPath, dirs_exist_ok=True)
             shutil.rmtree(eachPath)
         except NotADirectoryError :
-            pass
+            print("ERR")
+            # Detected the Error Here ,  it turns to infinite loop 
+            pass 
+
 
 def engine():
-    while True:
+    working = containsFolder(theAbsolutePath)
+    while working:
         subFolders = allSubPaths(theAbsolutePath)
         extractOrDelete(subFolders , theAbsolutePath)
-        if containsFolder(theAbsolutePath) :
-            continue
-        else:
-            break
+        working = containsFolder(theAbsolutePath)
 
 engine()

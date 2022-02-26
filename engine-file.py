@@ -1,9 +1,8 @@
 import os , shutil
 
 theAbsolutePath = input("Enter the Path of the Directory : ")
-
-
 # Todo : Checking if the Path is Right/Absolute Or Not  ?
+
 
 def containsFolder(pathToDirectory):
     """
@@ -11,15 +10,11 @@ def containsFolder(pathToDirectory):
     has sub-folders Or NOT , ONLY this
     :return bool
     """
-
     listOfFolders = os.listdir(pathToDirectory)
     if listOfFolders:
         return True
     else:
         return False
-
-
-
 
 
 def allSubPaths(pathToDirectory):
@@ -42,16 +37,12 @@ def extractOrDelete(listOfLevelPaths , mainPath) :
     It Returns Nothing ;
     :param listOfLevelPaths:
     """
-
     for eachPath in listOfLevelPaths :
         try :
             shutil.copytree(eachPath, mainPath, dirs_exist_ok=True)
             shutil.rmtree(eachPath)
         except NotADirectoryError :
             pass
-
-        # Check if folder empty and Delete it ?
-        # CHeck if full , Empty & delete
 
 def engine():
     while True:

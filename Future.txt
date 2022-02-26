@@ -1,0 +1,18 @@
+[Intro]
+What Do we Want to do    ?
+Make a Script to do the following :
+1-[input] An absolute path for the Folder ;
+2-[Process] Dig Deeper inside this folder and Get all sub-folders ...etc and Extract all those data to the Main Folder that was Given in "input"
+3-[Output] The Same folder , But Containing NO folders At ALL ! It Only Contains Files So that I don't Need to Dig into each folder and forget WHAT i wanted to Do
+
+-----------------------------
+-----------------------------
+//// Those are Things To make in Future  ;
+
+The Script Works Fine, But there are a Couple of Problem To work On :
+1-Check if the Path is Absolute ;
+2-After Extracting Files , The Script Does NOT stop [Fix Bug ]
+3-Test it On More Cases  ;
+4-Make it OOP design ???
+================================
+===============================

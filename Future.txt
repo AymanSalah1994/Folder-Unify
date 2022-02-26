@@ -16,3 +16,5 @@ The Script Works Fine, But there are a Couple of Problem To work On :
 4-Make it OOP design ???
 ================================
 ===============================
+
+The Bug is Catched , It happens When Main Folder has No Sub-folders  ; 

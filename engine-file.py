@@ -1,5 +1,6 @@
-import os , shutil
-from functionLibrary import containsSubFolders , allSubPaths , extractOrDelete
+import os
+import shutil
+from functionLibrary import containsSubFolders, allSubPaths, extractOrDelete
 theAbsolutePath = input("Enter the Path of the Directory : ")
 
 # Todo : Checking if the Path is Right/Absolute Or Not  ?
@@ -7,9 +8,10 @@ theAbsolutePath = input("Enter the Path of the Directory : ")
 
 def engine():
     working = containsSubFolders(theAbsolutePath)
-    while working:
+    if working : 
         subFolders = allSubPaths(theAbsolutePath)
-        extractOrDelete(subFolders , theAbsolutePath)
-        working = containsSubFolders(theAbsolutePath)
+        extractOrDelete(subFolders, theAbsolutePath)
+        engine()
+        
 
 engine()

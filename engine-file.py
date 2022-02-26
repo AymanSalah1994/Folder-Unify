@@ -8,10 +8,10 @@ theAbsolutePath = input("Enter the Path of the Directory : ")
 
 def engine():
     working = containsSubFolders(theAbsolutePath)
-    if working : 
+    if working:
         subFolders = allSubPaths(theAbsolutePath)
         extractOrDelete(subFolders, theAbsolutePath)
         engine()
-        
+
 
 engine()

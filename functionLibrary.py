@@ -8,6 +8,7 @@ import os
 import shutil
 import distutils.dir_util
 
+
 def containsSubFolders(pathToDirectory):
     """
     This is a Function to Check if a folder "represented by a Path"
@@ -18,10 +19,10 @@ def containsSubFolders(pathToDirectory):
     #  The List Contains Folders Names && Files TOO
 
     pathesToFilesFolders = []
-    for eachItem in listOfFoldersAndFiles : 
-        pathesToFilesFolders.append(os.path.join(pathToDirectory , eachItem))
-        # Now we Have a list of all paths 
-        # Whether Files pathes or Folders pathes  ; 
+    for eachItem in listOfFoldersAndFiles:
+        pathesToFilesFolders.append(os.path.join(pathToDirectory, eachItem))
+        # Now we Have a list of all paths
+        # Whether Files pathes or Folders pathes  ;
     foldersOnlyList = returnFoldersOnly(pathesToFilesFolders)
     if len(foldersOnlyList) > 0:
         return True
@@ -29,16 +30,12 @@ def containsSubFolders(pathToDirectory):
         return False
 
 
-
-def returnFoldersOnly(pathesToFilesFolders) : 
+def returnFoldersOnly(pathesToFilesFolders):
     foldersOnly = []
-    for eachPath in pathesToFilesFolders : 
-        if isdir(eachPath) : 
+    for eachPath in pathesToFilesFolders:
+        if isdir(eachPath):
             foldersOnly.append(eachPath)
     return foldersOnly
-
-
-
 
 
 def allSubPaths(pathToDirectory):
@@ -64,7 +61,7 @@ def extractOrDelete(listOfLevelPaths, mainPath):
     for eachPath in listOfLevelPaths:
         try:
             # shutil.copytree(eachPath, mainPath, dirs_exist_ok=True)
-            distutils.dir_util.copy_tree(eachPath , mainPath)
+            distutils.dir_util.copy_tree(eachPath, mainPath)
             shutil.rmtree(eachPath)
         except DistutilsFileError:
             print("ERR")
